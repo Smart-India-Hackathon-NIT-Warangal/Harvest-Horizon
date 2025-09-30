@@ -455,7 +455,21 @@ input:checked + .slider:before {
     </div>
 </div>
 
-<div id="analytics-tab-content">
+<div id="page-analytics" class="page-content hidden p-4 md:p-8 bg-light-cream dark:bg-gray-900">
+    <h3 class="text-3xl font-bold mb-6 text-forest-green dark:text-sand-beige">Analytics</h3>
+    
+    <div class="mb-6 border-b border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="analytics-tab-buttons">
+            <li class="mr-2">
+                <button class="analytics-tab-btn inline-block p-4 border-b-2 border-forest-green rounded-t-lg text-forest-green dark:text-sand-beige dark:border-sand-beige" data-target="analytics-tab-overview">Overview</button>
+            </li>
+            <li class="mr-2">
+                <button class="analytics-tab-btn inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" data-target="analytics-tab-recommendations">Recommendations Data</button>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="analytics-tab-content">
         <div id="analytics-tab-overview" class="analytics-tab-pane">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -493,8 +507,8 @@ input:checked + .slider:before {
                             <p class="text-sm text-gray-600 dark:text-gray-400">Predictions Made</p>
                         </div>
                         <div class="bg-light-cream dark:bg-gray-700 p-4 rounded-lg text-center">
-                            <b></b><h5 class="text-xl2 font-bold text-forest-green dark:text-sand-beige">89%</h5></div></b>
-                            <b></b><p class="text-m text-gray-600 dark:text-gray-400">Satisfaction Rate</p></b>
+                            <h5 class="text-xl font-bold text-forest-green dark:text-sand-beige">89%</h5>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Satisfaction Rate</p>
                         </div>
                         <div class="bg-light-cream dark:bg-gray-700 p-4 rounded-lg text-center">
                             <h5 class="text-xl font-bold text-forest-green dark:text-sand-beige">15%</h5>
@@ -3403,3 +3417,4 @@ document.getElementById('temp-manual-btn')?.addEventListener('click', () => {
 </body>
 
 </html>
+
