@@ -31,13 +31,7 @@
     </script>
 
     <style>
-        /* --- NEW: Material 3 Toggle Switch CSS --- */
-        /* ADD THIS CLASS for multi-line text truncation */
-        /* ADD THIS for smooth expand/collapse */
-        /* ADD THIS for the loading progress bar */
-        /* --- ADD THIS: Styles for Prediction Modal --- */
-        /* --- ADD THIS: Styles for the new Prediction Modal --- */
-        /* --- ADD THIS: Styles for Snackbar and Confirmation Modal --- */
+       
 #snackbar.show {
     transform: translate(-50%, 0);
 }
@@ -72,7 +66,7 @@
 }
 .prediction-slider-track {
     display: flex;
-    width: 300%; /* 3 steps * 100% width */
+    width: 300%; 
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .prediction-step {
@@ -461,22 +455,7 @@ input:checked + .slider:before {
     </div>
 </div>
 
-
-<div id="page-analytics" class="page-content hidden p-4 md:p-8 bg-light-cream dark:bg-gray-900">
-    <h3 class="text-3xl font-bold mb-6 text-forest-green dark:text-sand-beige">Analytics</h3>
-    
-    <div class="mb-6 border-b border-gray-200 dark:border-gray-700">
-        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="analytics-tab-buttons">
-            <li class="mr-2">
-                <button class="analytics-tab-btn inline-block p-4 border-b-2 border-forest-green rounded-t-lg text-forest-green dark:text-sand-beige dark:border-sand-beige" data-target="analytics-tab-overview">Overview</button>
-            </li>
-            <li class="mr-2">
-                <button class="analytics-tab-btn inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" data-target="analytics-tab-recommendations">Recommendations Data</button>
-            </li>
-        </ul>
-    </div>
-    
-    <div id="analytics-tab-content">
+<div id="analytics-tab-content">
         <div id="analytics-tab-overview" class="analytics-tab-pane">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -3422,4 +3401,5 @@ document.getElementById('temp-manual-btn')?.addEventListener('click', () => {
     });
  </script>
 </body>
+
 </html>
