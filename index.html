@@ -299,8 +299,23 @@ input:checked + .slider:before {
 .feedback-item.expanded .feedback-chevron {
     transform: rotate(180deg);
 }
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%; 
+}
 
+.responsive-table td {
+    max-width: 150px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
 
+main {
+    max-width: 100%;
+    overflow-x: hidden;
+}
     </style>
 </head>
 <body class="bg-light-cream dark:bg-gray-900 text-gray-800 dark:text-gray-200">
@@ -627,36 +642,36 @@ input:checked + .slider:before {
             
             <div id="recommend-data-loading" class="w-full progress-bar mb-6 hidden"><div class="progress-bar-value"></div></div>
             
-             <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-8">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white dark:bg-gray-800">
-                        <thead class="bg-sand-beige dark:bg-gray-700">
-                            <tr>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Timestamp</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">State</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">City</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">N</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">P</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">K</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Temp (°C)</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Humidity (%)</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">pH</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Rainfall (mm)</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Predicted Crop</th>
-                                <th class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">Alternatives</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recommend-data-table">
-                            <tr><td colspan="12" class="text-center py-4 text-gray-400">Loading data...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="flex justify-between items-center mt-4">
-                    <button id="recommend-prev-btn" class="py-2 px-4 bg-forest-green text-white rounded-lg hover:bg-leaf-green disabled:opacity-50" disabled>Previous</button>
-                    <span id="recommend-page-info" class="text-gray-600 dark:text-gray-400">Page 1 of 1</span>
-                    <button id="recommend-next-btn" class="py-2 px-4 bg-forest-green text-white rounded-lg hover:bg-leaf-green disabled:opacity-50" disabled>Next</button>
-                </div>
-             </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-8 table-responsive">
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white dark:bg-gray-800 responsive-table">
+            <thead class="bg-sand-beige dark:bg-gray-700">
+                <tr>
+                    <th data-label="Timestamp" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Timestamp</th>
+                    <th data-label="State" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">State</th>
+                    <th data-label="City" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">City</th>
+                    <th data-label="N" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">N</th>
+                    <th data-label="P" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">P</th>
+                    <th data-label="K" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">K</th>
+                    <th data-label="Temp (°C)" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Temp (°C)</th>
+                    <th data-label="Humidity (%)" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Humidity (%)</th>
+                    <th data-label="pH" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">pH</th>
+                    <th data-label="Rainfall (mm)" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Rainfall (mm)</th>
+                    <th data-label="Predicted Crop" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap">Predicted Crop</th>
+                    <th data-label="Alternatives" class="py-2 px-4 border-b dark:border-gray-600 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">Alternatives</th>
+                </tr>
+            </thead>
+            <tbody id="recommend-data-table">
+                <tr><td colspan="12" class="text-center py-4 text-gray-400">Loading data...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="flex justify-between items-center mt-4">
+        <button id="recommend-prev-btn" class="py-2 px-4 bg-forest-green text-white rounded-lg hover:bg-leaf-green disabled:opacity-50" disabled>Previous</button>
+        <span id="recommend-page-info" class="text-gray-600 dark:text-gray-400">Page 1 of 1</span>
+        <button id="recommend-next-btn" class="py-2 px-4 bg-forest-green text-white rounded-lg hover:bg-leaf-green disabled:opacity-50" disabled>Next</button>
+    </div>
+</div>
             
              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -1651,14 +1666,13 @@ const renderAdminYieldPredictions = () => {
             const yieldValue = entry.systemOutput?.predicted_yield_kg_per_hectare || entry.systemOutput?.prediction || 0;
             const yieldUnit = entry.systemOutput?.predicted_yield_kg_per_hectare ? 'kg/ha' : '(GBR Score)';
 
-            const rowHTML = `
-                <tr class="text-gray-800 dark:text-gray-200">
-                    <td class="py-2 px-4 border-b dark:border-gray-600 font-mono text-xs">...${id}</td>
-                    <td class="py-2 px-4 border-b dark:border-gray-600">${crop}</td>
-                    <td class="py-2 px-4 border-b dark:border-gray-600">${location}</td>
-                    <td class="py-2 px-4 border-b dark:border-gray-600 font-semibold">${parseFloat(yieldValue).toFixed(2)} <span class="text-xs text-gray-500">${yieldUnit}</span></td>
-                </tr>
-            `;
+// In rowHTML, add data-label to each <td>
+const rowHTML = `
+    <tr>
+        <td data-label="Timestamp" class="py-2 px-4 ...">${new Date(d.timestamp).toLocaleString()}</td>
+        <td data-label="State" class="py-2 px-4 ...">${loc.state || 'Unknown'}</td>
+        // ... add to all <td>
+    </tr>`;
             tableBody.innerHTML += rowHTML;
         });
     });
@@ -3417,4 +3431,5 @@ document.getElementById('temp-manual-btn')?.addEventListener('click', () => {
 </body>
 
 </html>
+
 
